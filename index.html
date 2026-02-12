@@ -5,482 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="description" content="YOYO Log — minimalist time tracking with iCloud sync and clean exports." />
-  <title>YOYO Log — Support & Privacy</title>
-
+  <title>YOYO Log</title>
   <style>
-    :root {
-      --bg: #f5f5f7;
-      --card: rgba(255, 255, 255, 0.72);
-      --stroke: rgba(0, 0, 0, 0.08);
-      --text: rgba(0, 0, 0, 0.88);
-      --muted: rgba(0, 0, 0, 0.6);
-      --link: #0a66ff;
-      --shadow: 0 12px 30px rgba(0,0,0,0.08);
-      --radius: 18px;
-      --max: 920px;
-      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    :root{
+      --bg:#f5f5f7; --card:rgba(255,255,255,.74); --stroke:rgba(0,0,0,.08);
+      --text:rgba(0,0,0,.88); --muted:rgba(0,0,0,.6); --link:#0a66ff;
+      --shadow:0 12px 30px rgba(0,0,0,.08); --radius:18px; --max:920px;
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b0b0f;
-        --card: rgba(22, 22, 28, 0.62);
-        --stroke: rgba(255, 255, 255, 0.10);
-        --text: rgba(255, 255, 255, 0.92);
-        --muted: rgba(255, 255, 255, 0.62);
-        --link: #4c8dff;
-        --shadow: 0 18px 40px rgba(0,0,0,0.55);
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b0b0f; --card:rgba(22,22,28,.62); --stroke:rgba(255,255,255,.10);
+        --text:rgba(255,255,255,.92); --muted:rgba(255,255,255,.62); --link:#4c8dff;
+        --shadow:0 18px 40px rgba(0,0,0,.55);
       }
     }
-
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--text);
-      background: radial-gradient(1200px 600px at 20% -10%, rgba(76,141,255,0.20), transparent 55%),
-                  radial-gradient(900px 500px at 85% 0%, rgba(255, 94, 145, 0.14), transparent 60%),
-                  radial-gradient(1200px 700px at 50% 110%, rgba(55, 215, 170, 0.12), transparent 60%),
-                  var(--bg);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      line-height: 1.55;
-    }
-
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .wrap {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 28px 18px 56px;
-    }
-
-    /* Top header */
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-width: 0;
-    }
-
-    .mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
+    *{box-sizing:border-box} body{margin:0;font-family:var(--sans);color:var(--text);
       background:
-        radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,0.55), transparent 60%),
-        linear-gradient(135deg, rgba(76,141,255,1), rgba(155,89,255,0.95));
-      box-shadow: 0 10px 18px rgba(76,141,255,0.22);
-      border: 1px solid rgba(255,255,255,0.25);
+        radial-gradient(1200px 600px at 20% -10%, rgba(76,141,255,0.20), transparent 55%),
+        radial-gradient(900px 500px at 85% 0%, rgba(255, 94, 145, 0.14), transparent 60%),
+        radial-gradient(1200px 700px at 50% 110%, rgba(55, 215, 170, 0.12), transparent 60%),
+        var(--bg);
+      -webkit-font-smoothing:antialiased;line-height:1.55;
     }
-
-    .brand-title {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      min-width: 0;
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px}
+    .top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:22px}
+    .brand{display:flex;align-items:center;gap:10px;min-width:0}
+    .mark{width:36px;height:36px;border-radius:12px;
+      background:radial-gradient(10px 10px at 30% 30%, rgba(255,255,255,.55), transparent 60%),
+                 linear-gradient(135deg, rgba(76,141,255,1), rgba(155,89,255,.95));
+      box-shadow:0 10px 18px rgba(76,141,255,.22);border:1px solid rgba(255,255,255,.25)
     }
-
-    .brand-title strong {
-      font-size: 14px;
-      letter-spacing: 0.2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    .bt strong{font-size:14px;letter-spacing:.2px;display:block}
+    .bt span{font-size:12px;color:var(--muted)}
+    .pill{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:999px;
+      border:1px solid var(--stroke);background:rgba(255,255,255,.30);
+      backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+      color:var(--muted);font-size:12px;white-space:nowrap
     }
-
-    .brand-title span {
-      font-size: 12px;
-      color: var(--muted);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    @media (prefers-color-scheme: dark){.pill{background:rgba(255,255,255,.06)}}
+    .hero{border:1px solid var(--stroke);background:var(--card);border-radius:calc(var(--radius) + 6px);
+      box-shadow:var(--shadow);padding:28px 22px;position:relative;overflow:hidden;
+      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)
     }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 999px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.30);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: var(--muted);
-      font-size: 12px;
-      white-space: nowrap;
+    .hero:before{content:"";position:absolute;inset:-1px;
+      background:radial-gradient(700px 320px at 10% 0%, rgba(76,141,255,.22), transparent 55%),
+               radial-gradient(520px 260px at 90% 10%, rgba(255,94,145,.16), transparent 60%),
+               radial-gradient(520px 260px at 50% 120%, rgba(55,215,170,.12), transparent 60%);
+      pointer-events:none;opacity:.9
     }
-    @media (prefers-color-scheme: dark) {
-      .pill { background: rgba(255,255,255,0.06); }
+    .hi{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:18px;align-items:start}
+    @media (max-width:820px){.hi{grid-template-columns:1fr}}
+    h1{margin:0 0 8px;font-size:34px;letter-spacing:-.6px;line-height:1.1}
+    .sub{margin:0 0 16px;color:var(--muted);font-size:15px;max-width:62ch}
+    .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:11px 14px;border-radius:14px;
+      border:1px solid var(--stroke);background:rgba(255,255,255,.34);backdrop-filter:blur(10px);
+      -webkit-backdrop-filter:blur(10px);color:var(--text);font-size:14px;font-weight:600;
+      transition:transform 120ms ease,border-color 120ms ease
     }
-
-    /* Hero */
-    .hero {
-      border: 1px solid var(--stroke);
-      background: var(--card);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border-radius: calc(var(--radius) + 6px);
-      box-shadow: var(--shadow);
-      padding: 28px 22px;
-      overflow: hidden;
-      position: relative;
+    @media (prefers-color-scheme: dark){.btn{background:rgba(255,255,255,.08)}}
+    .btn:hover{transform:translateY(-1px);border-color:rgba(76,141,255,.35);text-decoration:none}
+    .btn.primary{border-color:rgba(76,141,255,.35);
+      background:linear-gradient(135deg, rgba(76,141,255,.95), rgba(155,89,255,.92));
+      color:#fff;box-shadow:0 16px 30px rgba(76,141,255,.18)
     }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background:
-        radial-gradient(700px 320px at 10% 0%, rgba(76,141,255,0.22), transparent 55%),
-        radial-gradient(520px 260px at 90% 10%, rgba(255,94,145,0.16), transparent 60%),
-        radial-gradient(520px 260px at 50% 120%, rgba(55,215,170,0.12), transparent 60%);
-      pointer-events: none;
-      opacity: 0.9;
+    .meta{border:1px solid var(--stroke);border-radius:var(--radius);background:rgba(255,255,255,.24);
+      padding:14px 14px 12px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)
     }
-
-    .hero-inner {
-      position: relative;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: start;
+    @media (prefers-color-scheme: dark){.meta{background:rgba(255,255,255,.06)}}
+    .mt{font-size:12px;color:var(--muted);margin:0 0 10px;letter-spacing:.2px;text-transform:uppercase}
+    .mi{display:flex;justify-content:space-between;gap:12px;padding:10px 10px;border-radius:14px;border:1px solid var(--stroke);
+      background:rgba(255,255,255,.20);margin-bottom:10px
     }
-
-    @media (max-width: 820px) {
-      .hero-inner { grid-template-columns: 1fr; }
+    @media (prefers-color-scheme: dark){.mi{background:rgba(255,255,255,.05)}}
+    .mi span{color:var(--muted);font-size:12px} .mi strong{font-size:12px;font-family:var(--mono)}
+    .cards{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    @media (max-width:820px){.cards{grid-template-columns:1fr}}
+    .card{border:1px solid var(--stroke);border-radius:var(--radius);background:var(--card);
+      padding:18px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+      box-shadow:0 10px 22px rgba(0,0,0,.06)
     }
-
-    h1 {
-      margin: 0 0 8px;
-      font-size: 34px;
-      letter-spacing: -0.6px;
-      line-height: 1.1;
+    .card h2{margin:0 0 8px;font-size:16px;letter-spacing:-.2px}
+    .card p{margin:0 0 10px;color:var(--muted);font-size:14px}
+    footer{margin-top:20px;padding:14px 4px 0;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      color:var(--muted);font-size:12px
     }
-
-    .subhead {
-      margin: 0 0 16px;
-      color: var(--muted);
-      font-size: 15px;
-      max-width: 62ch;
-    }
-
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 11px 14px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.34);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      color: var(--text);
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.1px;
-      transition: transform 120ms ease, background 120ms ease, border-color 120ms ease;
-      user-select: none;
-    }
-    @media (prefers-color-scheme: dark) {
-      .btn { background: rgba(255,255,255,0.08); }
-    }
-    .btn:hover {
-      transform: translateY(-1px);
-      border-color: rgba(76,141,255,0.35);
-      text-decoration: none;
-    }
-
-    .btn.primary {
-      border-color: rgba(76,141,255,0.35);
-      background: linear-gradient(135deg, rgba(76,141,255,0.95), rgba(155,89,255,0.92));
-      color: white;
-      box-shadow: 0 16px 30px rgba(76,141,255,0.18);
-    }
-    .btn.primary:hover { transform: translateY(-1px) scale(1.01); }
-
-    .meta-card {
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.24);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      padding: 14px 14px 12px;
-    }
-    @media (prefers-color-scheme: dark) {
-      .meta-card { background: rgba(255,255,255,0.06); }
-    }
-
-    .meta-title {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0 0 10px;
-      letter-spacing: 0.2px;
-      text-transform: uppercase;
-    }
-
-    .meta-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 10px;
-    }
-
-    .meta-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 10px;
-      border-radius: 14px;
-      border: 1px solid var(--stroke);
-      background: rgba(255,255,255,0.20);
-    }
-    @media (prefers-color-scheme: dark) {
-      .meta-item { background: rgba(255,255,255,0.05); }
-    }
-
-    .meta-item span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .meta-item strong {
-      font-size: 12px;
-      font-family: var(--mono);
-      letter-spacing: 0.2px;
-      color: var(--text);
-    }
-
-    /* Content grid */
-    .grid {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-    @media (max-width: 820px) {
-      .grid { grid-template-columns: 1fr; }
-    }
-
-    .card {
-      border: 1px solid var(--stroke);
-      border-radius: var(--radius);
-      background: var(--card);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 10px 22px rgba(0,0,0,0.06);
-      padding: 18px 18px;
-    }
-
-    .card h2 {
-      margin: 0 0 8px;
-      font-size: 16px;
-      letter-spacing: -0.2px;
-    }
-
-    .card p {
-      margin: 0 0 10px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .list {
-      margin: 10px 0 0;
-      padding-left: 18px;
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .list li { margin: 6px 0; }
-
-    .small {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 20px;
-      padding: 14px 4px 0;
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      flex-wrap: wrap;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .sep { opacity: 0.5; }
-
-    /* Gentle motion */
-    @media (prefers-reduced-motion: no-preference) {
-      .hero, .card, .meta-card {
-        animation: floatIn 260ms ease-out both;
-      }
-      @keyframes floatIn {
-        from { transform: translateY(6px); opacity: 0; }
-        to   { transform: translateY(0px); opacity: 1; }
-      }
-    }
+    .sep{opacity:.6}
   </style>
 </head>
-
 <body>
   <div class="wrap">
-    <div class="topbar">
+    <div class="top">
       <div class="brand">
         <div class="mark" aria-hidden="true"></div>
-        <div class="brand-title">
+        <div class="bt">
           <strong>YOYO Log</strong>
           <span>Support & Privacy</span>
         </div>
       </div>
-      <div class="pill" title="App Store submission-ready">
-        <span>Public App Store</span>
-        <span class="sep">•</span>
-        <span>iCloud Sync</span>
-        <span class="sep">•</span>
-        <span>Paid</span>
+      <div class="pill" title="Submission-ready">
+        <span>iCloud Sync</span><span class="sep">•</span><span>Paid</span><span class="sep">•</span><span>No Tracking</span>
       </div>
     </div>
 
     <section class="hero">
-      <div class="hero-inner">
+      <div class="hi">
         <div>
           <h1>Minimal time tracking.<br/>Premium clarity.</h1>
-          <p class="subhead">
+          <p class="sub">
             YOYO Log stores only what you log: sessions, breaks, jobs, and (optionally) your name for exports.
             Data syncs privately via iCloud.
           </p>
-
-          <div class="cta-row">
-            <a class="btn primary" href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">Contact Support</a>
-            <a class="btn" href="#privacy">View Privacy Policy</a>
+          <div class="row">
+            <a class="btn primary" href="support.html">Support</a>
+            <a class="btn" href="privacy.html">Privacy Policy</a>
+            <a class="btn" href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">Email</a>
           </div>
-
-          <p class="small" style="margin-top:12px;">
-            Support email: <a href="mailto:embriapp@gmail.com">embriapp@gmail.com</a>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:12px;">
+            Contact: <a href="mailto:embriapp@gmail.com">embriapp@gmail.com</a>
           </p>
         </div>
 
-        <aside class="meta-card" aria-label="App summary">
-          <p class="meta-title">At a glance</p>
-          <div class="meta-grid">
-            <div class="meta-item">
-              <span>Data storage</span>
-              <strong>iCloud (CloudKit)</strong>
-            </div>
-            <div class="meta-item">
-              <span>Tracking</span>
-              <strong>None</strong>
-            </div>
-            <div class="meta-item">
-              <span>Accounts</span>
-              <strong>Apple ID only</strong>
-            </div>
-            <div class="meta-item">
-              <span>Payments</span>
-              <strong>Apple App Store</strong>
-            </div>
-          </div>
+        <aside class="meta">
+          <p class="mt">At a glance</p>
+          <div class="mi"><span>Data storage</span><strong>iCloud (CloudKit)</strong></div>
+          <div class="mi"><span>Tracking</span><strong>None</strong></div>
+          <div class="mi"><span>Accounts</span><strong>Apple ID only</strong></div>
+          <div class="mi" style="margin-bottom:0;"><span>Payments</span><strong>Apple App Store</strong></div>
         </aside>
       </div>
     </section>
 
-    <div class="grid">
-      <section class="card" id="support">
+    <div class="cards">
+      <section class="card">
         <h2>Support</h2>
-        <p>
-          If you need help, report a bug, or have a question about exports or syncing, email us.
-        </p>
-        <p>
-          <strong><a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">embriapp@gmail.com</a></strong>
-        </p>
-        <p class="small">
-          Tip: include your iOS version, device model, and what you expected vs what happened.
-        </p>
+        <p>Questions, bugs, exports, or syncing — we’ll help.</p>
+        <p><strong><a href="support.html">Open Support Page →</a></strong></p>
       </section>
-
-      <section class="card" id="privacy">
+      <section class="card">
         <h2>Privacy Policy</h2>
-        <p><strong>Effective Date:</strong> February 12, 2026</p>
-        <p>
-          YOYO Log is a paid time-tracking application. We respect your privacy and store only the information
-          required for the app to function.
-        </p>
-
-        <h2 style="margin-top:14px;">Information Stored</h2>
-        <ul class="list">
-          <li>Clock-in and clock-out times</li>
-          <li>Break durations</li>
-          <li>Job or task names created by the user</li>
-          <li>User-provided name (optional, used for export reports)</li>
-        </ul>
-
-        <h2 style="margin-top:14px;">Data Storage</h2>
-        <p>
-          All data is stored in the user’s private iCloud account using Apple CloudKit.
-        </p>
-        <ul class="list">
-          <li>Data is associated only with the user’s Apple ID.</li>
-          <li>The developer does not access, view, or store user data on external servers.</li>
-          <li>No data is sold, shared, rented, or transferred to third parties.</li>
-        </ul>
-
-        <h2 style="margin-top:14px;">Payments</h2>
-        <p>
-          YOYO Log is sold through Apple’s App Store. Apple processes payments. We do not receive or store payment details.
-        </p>
-
-        <h2 style="margin-top:14px;">Analytics & Tracking</h2>
-        <p>
-          YOYO Log does not use advertising frameworks, third-party analytics, or tracking technologies.
-        </p>
-
-        <h2 style="margin-top:14px;">Data Deletion</h2>
-        <p>
-          You can delete your data by removing the app from your device and/or managing iCloud storage settings under your Apple ID.
-        </p>
-
-        <h2 style="margin-top:14px;">Contact</h2>
-        <p>
-          For privacy questions: <strong><a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Privacy">embriapp@gmail.com</a></strong>
-        </p>
+        <p>Clear and minimal. No ads. No tracking. iCloud sync.</p>
+        <p><strong><a href="privacy.html">Open Privacy Policy →</a></strong></p>
       </section>
     </div>
 
     <footer>
       <div>© <span id="y"></span> Embriapp</div>
       <div>
-        <a href="#support">Support</a>
-        <span class="sep"> · </span>
-        <a href="#privacy">Privacy</a>
+        <a href="support.html">Support</a> <span class="sep">·</span> <a href="privacy.html">Privacy</a>
       </div>
     </footer>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
 </body>
 </html>
 
