@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <title>YOYO Log — Support</title>
+  <style>
+    :root{--bg:#f5f5f7;--card:rgba(255,255,255,.74);--stroke:rgba(0,0,0,.08);--text:rgba(0,0,0,.88);
+      --muted:rgba(0,0,0,.6);--link:#0a66ff;--shadow:0 12px 30px rgba(0,0,0,.08);--radius:18px;--max:920px;
+      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    @media (prefers-color-scheme: dark){
+      :root{--bg:#0b0b0f;--card:rgba(22,22,28,.62);--stroke:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);
+        --muted:rgba(255,255,255,.62);--link:#4c8dff;--shadow:0 18px 40px rgba(0,0,0,.55);}
+    }
+    body{margin:0;font-family:var(--sans);color:var(--text);line-height:1.55;
+      background:radial-gradient(1200px 600px at 20% -10%, rgba(76,141,255,0.20), transparent 55%),
+                 radial-gradient(900px 500px at 85% 0%, rgba(55,215,170,0.12), transparent 60%),
+                 var(--bg);
+      -webkit-font-smoothing:antialiased;}
+    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px}
+    .card{border:1px solid var(--stroke);background:var(--card);border-radius:calc(var(--radius) + 6px);
+      box-shadow:var(--shadow);padding:24px 20px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+    h1{margin:0 0 8px;font-size:28px;letter-spacing:-.4px}
+    p{margin:0 0 12px;color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:14px;
+      border:1px solid var(--stroke);background:rgba(255,255,255,.34);color:var(--text);font-weight:600}
+    @media (prefers-color-scheme: dark){.btn{background:rgba(255,255,255,.08)}}
+    .btn:hover{text-decoration:none;border-color:rgba(76,141,255,.35)}
+    .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    ul{margin:10px 0 0;padding-left:18px;color:var(--text)}
+    li{margin:6px 0}
+    .small{font-size:12px;color:var(--muted);margin-top:14px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>YOYO Log Support</h1>
+      <p>If you need help with syncing, exports, or anything else, contact us:</p>
+      <p><strong><a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">embriapp@gmail.com</a></strong></p>
+
+      <div class="row">
+        <a class="btn" href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">Email Support</a>
+        <a class="btn" href="privacy.html">Privacy Policy</a>
+        <a class="btn" href="./">Home</a>
+      </div>
+
+      <p class="small"><strong>To help us troubleshoot faster, include:</strong></p>
+      <ul>
+        <li>Your device model (e.g., iPhone 15 Pro)</li>
+        <li>Your iOS version</li>
+        <li>What you expected vs what happened</li>
+        <li>Any screenshots (if applicable)</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
