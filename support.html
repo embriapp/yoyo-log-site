@@ -1,45 +1,107 @@
+<!-- support.html -->
 <!doctype html>
 <html lang="en">
-<head> <meta name="theme-color" content="#0B1220" />
-
-<link rel="icon" href="YOYOLOG.png" type="image/png" />
-<link rel="apple-touch-icon" href="YOYOLOG.png" />
-
+<head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="light dark" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="theme-color" content="#0B1220" />
+
+  <link rel="icon" href="YOYOLOG.png" type="image/png" />
+  <link rel="apple-touch-icon" href="YOYOLOG.png" />
+
   <title>YOYO Log — Support</title>
+
   <style>
-    :root{--bg:#f5f5f7;--card:rgba(255,255,255,.74);--stroke:rgba(0,0,0,.08);--text:rgba(0,0,0,.88);
-      --muted:rgba(0,0,0,.6);--link:#0a66ff;--shadow:0 12px 30px rgba(0,0,0,.08);--radius:18px;--max:920px;
-      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-    @media (prefers-color-scheme: dark){
-      :root{--bg:#0b0b0f;--card:rgba(22,22,28,.62);--stroke:rgba(255,255,255,.10);--text:rgba(255,255,255,.92);
-        --muted:rgba(255,255,255,.62);--link:#4c8dff;--shadow:0 18px 40px rgba(0,0,0,.55);}
+    :root{
+      --bg0:#070B12; --bg1:#0B1220;
+      --card:rgba(18, 26, 38, .68);
+      --stroke:rgba(255,255,255,.10);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.62);
+      --blue:#2AA8FF;
+      --shadow:0 18px 40px rgba(0,0,0,.55);
+      --radius:18px; --max:920px;
+      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
     }
-    body{margin:0;font-family:var(--sans);color:var(--text);line-height:1.55;
-      background:radial-gradient(1200px 600px at 20% -10%, rgba(76,141,255,0.20), transparent 55%),
-                 radial-gradient(900px 500px at 85% 0%, rgba(55,215,170,0.12), transparent 60%),
-                 var(--bg);
-      -webkit-font-smoothing:antialiased;}
-    a{color:var(--link);text-decoration:none} a:hover{text-decoration:underline}
-    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px}
-    .card{border:1px solid var(--stroke);background:var(--card);border-radius:calc(var(--radius) + 6px);
-      box-shadow:var(--shadow);padding:24px 20px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-    h1{margin:0 0 8px;font-size:28px;letter-spacing:-.4px}
-    p{margin:0 0 12px;color:var(--muted)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:11px 14px;border-radius:14px;
-      border:1px solid var(--stroke);background:rgba(255,255,255,.34);color:var(--text);font-weight:600}
-    @media (prefers-color-scheme: dark){.btn{background:rgba(255,255,255,.08)}}
-    .btn:hover{text-decoration:none;border-color:rgba(76,141,255,.35)}
-    .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
-    ul{margin:10px 0 0;padding-left:18px;color:var(--text)}
-    li{margin:6px 0}
-    .small{font-size:12px;color:var(--muted);margin-top:14px}
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      line-height:1.55;
+      background:
+        radial-gradient(1200px 700px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 10% 40%, rgba(255,255,255,.06), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg0));
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{ color:var(--blue); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 56px; }
+
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; margin-bottom:16px;
+    }
+
+    .brand{ display:flex; align-items:center; gap:10px; }
+    .appicon{
+      width:36px; height:36px; border-radius:12px; object-fit:cover;
+      border:1px solid rgba(255,255,255,.14);
+      box-shadow:0 14px 30px rgba(0,0,0,.35);
+    }
+    .bt strong{ font-size:14px; letter-spacing:.2px; display:block; }
+    .bt span{ font-size:12px; color:var(--muted); }
+
+    .card{
+      border:1px solid var(--stroke);
+      background:var(--card);
+      border-radius:calc(var(--radius) + 6px);
+      box-shadow:var(--shadow);
+      padding:24px 20px;
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+    }
+
+    h1{ margin:0 0 8px; font-size:28px; letter-spacing:-.4px; }
+    p{ margin:0 0 12px; color:var(--muted); }
+
+    .row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px; border-radius:14px;
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.06);
+      color:var(--text); font-weight:600;
+    }
+    .btn:hover{ text-decoration:none; border-color:rgba(42,168,255,.28); }
+
+    ul{ margin:10px 0 0; padding-left:18px; color:var(--text); }
+    li{ margin:6px 0; }
+    .small{ font-size:12px; color:var(--muted); margin-top:14px; }
+    .sep{ opacity:.6; }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <img class="appicon" src="YOYOLOG.png" alt="YOYO Log icon" />
+        <div class="bt">
+          <strong>YOYO Log</strong>
+          <span>Support</span>
+        </div>
+      </div>
+      <div style="font-size:12px; color:var(--muted);">
+        <a href="./">Home</a> <span class="sep">·</span> <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+
     <div class="card">
       <h1>YOYO Log Support</h1>
       <p>If you need help with syncing, exports, or anything else, contact us:</p>
@@ -62,3 +124,4 @@
   </div>
 </body>
 </html>
+
