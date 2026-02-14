@@ -1,128 +1,108 @@
-<!-- support.html -->
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#0B1220" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<meta name="theme-color" content="#0B1220" />
 
-  <link rel="icon" href="YOYOLOG.png" type="image/png" />
-  <link rel="apple-touch-icon" href="YOYOLOG.png" />
+<link rel="icon" href="../../YOYOLOG.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../YOYOLOG.png" />
 
-  <title>YOYO Log — Support</title>
+<title>YOYO Log — Support</title>
 
-  <style>
-    :root{
-      --bg0:#070B12; --bg1:#0B1220;
-      --card:rgba(18, 26, 38, .68);
-      --stroke:rgba(255,255,255,.10);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.62);
-      --blue:#2AA8FF;
-      --shadow:0 18px 40px rgba(0,0,0,.55);
-      --radius:18px; --max:920px;
-      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
+<style>
+:root{
+--bg0:#070B12;
+--bg1:#0B1220;
+--card:rgba(18,26,38,.68);
+--stroke:rgba(255,255,255,.10);
+--text:rgba(255,255,255,.92);
+--muted:rgba(255,255,255,.62);
+--blue:#2AA8FF;
+--radius:18px;
+--max:900px;
+--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--text);
-      line-height:1.55;
-      background:
-        radial-gradient(1200px 700px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
-        radial-gradient(900px 600px at 10% 40%, rgba(255,255,255,.06), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg0));
-      -webkit-font-smoothing:antialiased;
-    }
+*{box-sizing:border-box;}
+body{
+margin:0;
+font-family:var(--sans);
+color:var(--text);
+background:
+radial-gradient(1000px 600px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
+linear-gradient(180deg,var(--bg1),var(--bg0));
+-webkit-font-smoothing:antialiased;
+}
 
-    a{ color:var(--blue); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 56px; }
+.wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px;}
 
-    .top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; margin-bottom:16px;
-    }
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:12px;
+color:var(--muted);
+margin-bottom:20px;
+}
 
-    .brand{ display:flex; align-items:center; gap:10px; }
-    .appicon{
-      width:36px; height:36px; border-radius:12px; object-fit:cover;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 14px 30px rgba(0,0,0,.35);
-    }
-    .bt strong{ font-size:14px; letter-spacing:.2px; display:block; }
-    .bt span{ font-size:12px; color:var(--muted); }
+.card{
+background:var(--card);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+padding:24px;
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+}
 
-    .card{
-      border:1px solid var(--stroke);
-      background:var(--card);
-      border-radius:calc(var(--radius) + 6px);
-      box-shadow:var(--shadow);
-      padding:24px 20px;
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-    }
+h1{margin:0 0 10px;font-size:26px;}
+p{color:var(--muted);margin:0 0 12px;}
 
-    h1{ margin:0 0 8px; font-size:28px; letter-spacing:-.4px; }
-    p{ margin:0 0 12px; color:var(--muted); }
-
-    .row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px; border-radius:14px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.06);
-      color:var(--text); font-weight:600;
-    }
-    .btn:hover{ text-decoration:none; border-color:rgba(42,168,255,.28); }
-
-    ul{ margin:10px 0 0; padding-left:18px; color:var(--text); }
-    li{ margin:6px 0; }
-    .small{ font-size:12px; color:var(--muted); margin-top:14px; }
-    .sep{ opacity:.6; }
-  </style>
+ul{padding-left:18px;}
+li{margin:6px 0;}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <img class="appicon" src="YOYOLOG.png" alt="YOYO Log icon" />
-        <div class="bt">
-          <strong>YOYO Log</strong>
-          <span>Support</span>
-        </div>
-      </div>
-      <div style="font-size:12px; color:var(--muted);">
-        <a href="./">Home</a> <span class="sep">·</span> <a href="privacy.html">Privacy</a>
-      </div>
-    </div>
+<div class="wrap">
 
-    <div class="card">
-      <h1>YOYO Log Support</h1>
-      <p>If you need help with syncing, exports, or anything else, contact us:</p>
-      <p><strong><a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">embriapp@gmail.com</a></strong></p>
+<div class="top">
+<div>
+<strong>YOYO Log</strong>  
+<span style="display:block;font-size:11px;">
+by <a href="/">Embri</a>
+</span>
+</div>
 
-      <div class="row">
-        <a class="btn" href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">Email Support</a>
-        <a class="btn" href="privacy.html">Privacy Policy</a>
-        <a class="btn" href="./">Home</a>
-      </div>
+<div>
+<a href="/">Embri</a> ·
+<a href="./">YOYO Log</a> ·
+<a href="privacy.html">Privacy</a>
+</div>
+</div>
 
-      <p class="small"><strong>To help us troubleshoot faster, include:</strong></p>
-      <ul>
-        <li>Your device model (e.g., iPhone 15 Pro)</li>
-        <li>Your iOS version</li>
-        <li>What you expected vs what happened</li>
-        <li>Any screenshots (if applicable)</li>
-      </ul>
-    </div>
-  </div>
+<div class="card">
+<h1>Support</h1>
+<p>If you need help with syncing, exports, or anything else, contact:</p>
+
+<p><strong>
+<a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Support">
+embriapp@gmail.com
+</a>
+</strong></p>
+
+<p style="margin-top:18px;"><strong>To help us troubleshoot faster include:</strong></p>
+<ul>
+<li>Your device model</li>
+<li>Your iOS version</li>
+<li>What happened vs what you expected</li>
+</ul>
+</div>
+
+</div>
 </body>
 </html>
-
-
