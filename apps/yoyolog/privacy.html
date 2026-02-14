@@ -1,149 +1,127 @@
-<!-- privacy.html -->
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
-  <meta name="theme-color" content="#0B1220" />
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark light" />
+<meta name="theme-color" content="#0B1220" />
 
-  <link rel="icon" href="YOYOLOG.png" type="image/png" />
-  <link rel="apple-touch-icon" href="YOYOLOG.png" />
+<link rel="icon" href="../../YOYOLOG.png" type="image/png" />
+<link rel="apple-touch-icon" href="../../YOYOLOG.png" />
 
-  <title>YOYO Log — Privacy Policy</title>
+<title>YOYO Log — Privacy Policy</title>
 
-  <style>
-    :root{
-      --bg0:#070B12; --bg1:#0B1220;
-      --card:rgba(18, 26, 38, .68);
-      --stroke:rgba(255,255,255,.10);
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.62);
-      --blue:#2AA8FF;
-      --shadow:0 18px 40px rgba(0,0,0,.55);
-      --radius:18px; --max:920px;
-      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    }
+<style>
+:root{
+--bg0:#070B12;
+--bg1:#0B1220;
+--card:rgba(18,26,38,.68);
+--stroke:rgba(255,255,255,.10);
+--text:rgba(255,255,255,.92);
+--muted:rgba(255,255,255,.62);
+--blue:#2AA8FF;
+--radius:18px;
+--max:900px;
+--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+}
 
-    *{ box-sizing:border-box; }
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--text);
-      line-height:1.55;
-      background:
-        radial-gradient(1200px 700px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
-        radial-gradient(900px 600px at 50% 115%, rgba(212,86,86,.10), transparent 60%),
-        linear-gradient(180deg, var(--bg1), var(--bg0));
-      -webkit-font-smoothing:antialiased;
-    }
+*{box-sizing:border-box;}
+body{
+margin:0;
+font-family:var(--sans);
+color:var(--text);
+background:
+radial-gradient(1000px 600px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
+linear-gradient(180deg,var(--bg1),var(--bg0));
+-webkit-font-smoothing:antialiased;
+}
 
-    a{ color:var(--blue); text-decoration:none; }
-    a:hover{ text-decoration:underline; }
+a{color:var(--blue);text-decoration:none;}
+a:hover{text-decoration:underline;}
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 56px; }
+.wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 56px;}
 
-    .top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:14px; margin-bottom:16px;
-    }
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-size:12px;
+color:var(--muted);
+margin-bottom:20px;
+}
 
-    .brand{ display:flex; align-items:center; gap:10px; }
-    .appicon{
-      width:36px; height:36px; border-radius:12px; object-fit:cover;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 14px 30px rgba(0,0,0,.35);
-    }
-    .bt strong{ font-size:14px; letter-spacing:.2px; display:block; }
-    .bt span{ font-size:12px; color:var(--muted); }
+.card{
+background:var(--card);
+border:1px solid var(--stroke);
+border-radius:var(--radius);
+padding:24px;
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
+}
 
-    .card{
-      border:1px solid var(--stroke);
-      background:var(--card);
-      border-radius:calc(var(--radius) + 6px);
-      box-shadow:var(--shadow);
-      padding:24px 20px;
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
-    }
-
-    h1{ margin:0 0 8px; font-size:28px; letter-spacing:-.4px; }
-    h2{ margin:18px 0 8px; font-size:15px; letter-spacing:-.2px; color:var(--text); }
-    p{ margin:0 0 12px; color:var(--muted); }
-
-    ul{ margin:10px 0 0; padding-left:18px; color:var(--text); }
-    li{ margin:6px 0; }
-
-    .row{ display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:11px 14px; border-radius:14px;
-      border:1px solid var(--stroke);
-      background:rgba(255,255,255,.06);
-      color:var(--text); font-weight:600;
-    }
-    .btn:hover{ text-decoration:none; border-color:rgba(42,168,255,.28); }
-
-    .small{ font-size:12px; color:var(--muted); }
-    .sep{ opacity:.6; }
-  </style>
+h1{margin:0 0 10px;font-size:26px;}
+h2{margin-top:18px;font-size:15px;}
+p{color:var(--muted);margin:0 0 12px;}
+ul{padding-left:18px;}
+li{margin:6px 0;}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="top">
-      <div class="brand">
-        <img class="appicon" src="YOYOLOG.png" alt="YOYO Log icon" />
-        <div class="bt">
-          <strong>YOYO Log</strong>
-          <span>Privacy Policy</span>
-        </div>
-      </div>
-      <div style="font-size:12px; color:var(--muted);">
-        <a href="./">Home</a> <span class="sep">·</span> <a href="support.html">Support</a>
-      </div>
-    </div>
+<div class="wrap">
 
-    <div class="card">
-      <h1>Privacy Policy — YOYO Log</h1>
-      <p><strong>Effective Date:</strong> February 12, 2026</p>
-      <p>YOYO Log is a paid time-tracking application. We respect your privacy and store only the information required for the app to function.</p>
+<div class="top">
+<div>
+<strong>YOYO Log</strong>  
+<span style="display:block;font-size:11px;">
+by <a href="/">Embri</a>
+</span>
+</div>
 
-      <h2>Information Stored</h2>
-      <ul>
-        <li>Clock-in and clock-out times</li>
-        <li>Break durations</li>
-        <li>Job or task names created by the user</li>
-        <li>User-provided name (optional, used for export reports)</li>
-      </ul>
-      <p class="small">YOYO Log does not collect email addresses, phone numbers, location data, contacts, device identifiers, or sensitive personal information.</p>
+<div>
+<a href="/">Embri</a> ·
+<a href="./">YOYO Log</a> ·
+<a href="support.html">Support</a>
+</div>
+</div>
 
-      <h2>Data Storage</h2>
-      <p>All data is stored in the user’s private iCloud account using Apple CloudKit.</p>
-      <ul>
-        <li>Data is associated only with the user’s Apple ID.</li>
-        <li>The developer does not access, view, or store user data on external servers.</li>
-        <li>No data is sold, shared, rented, or transferred to third parties.</li>
-      </ul>
+<div class="card">
+<h1>Privacy Policy</h1>
+<p><strong>Effective Date:</strong> February 12, 2026</p>
 
-      <h2>Payments</h2>
-      <p>YOYO Log is distributed through Apple’s App Store. Apple processes payments. We do not receive or store payment details.</p>
+<p>YOYO Log is a paid time-tracking application. We respect your privacy and store only the information required for the app to function.</p>
 
-      <h2>Analytics & Tracking</h2>
-      <p>YOYO Log does not use advertising frameworks, third-party analytics, or tracking technologies.</p>
+<h2>Information Stored</h2>
+<ul>
+<li>Clock-in and clock-out times</li>
+<li>Break durations</li>
+<li>Job or task names</li>
+<li>User-provided name (optional, used for export reports)</li>
+</ul>
 
-      <h2>Data Deletion</h2>
-      <p>You can delete your data by removing the app from your device and/or managing iCloud storage settings under your Apple ID.</p>
+<h2>Data Storage</h2>
+<p>All data is stored in the user’s private iCloud account using Apple CloudKit.</p>
+<ul>
+<li>Data is associated only with the user’s Apple ID</li>
+<li>The developer does not access or store user data externally</li>
+<li>No data is sold or shared</li>
+</ul>
 
-      <h2>Contact</h2>
-      <p>For privacy questions: <strong><a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Privacy">embriapp@gmail.com</a></strong></p>
+<h2>Payments</h2>
+<p>Payments are processed entirely by Apple through the App Store.</p>
 
-      <div class="row">
-        <a class="btn" href="support.html">Support</a>
-        <a class="btn" href="./">Home</a>
-      </div>
-    </div>
-  </div>
+<h2>Analytics & Tracking</h2>
+<p>YOYO Log does not use advertising frameworks or third-party tracking technologies.</p>
+
+<h2>Contact</h2>
+<p>
+<a href="mailto:embriapp@gmail.com?subject=YOYO%20Log%20Privacy">
+embriapp@gmail.com
+</a>
+</p>
+
+</div>
+
+</div>
 </body>
 </html>
-
