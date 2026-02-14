@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <meta name="theme-color" content="#0B1220" />
-  <meta name="description" content="Embri builds focused, beautifully designed apps. YOYO Log is our first app." />
+  <meta name="description" content="Embri is an independent app studio building focused, beautifully designed apps. YOYO Log is our first release." />
 
   <link rel="icon" href="YOYOLOG.png" type="image/png" />
   <link rel="apple-touch-icon" href="YOYOLOG.png" />
 
-  <title>Embri</title>
+  <title>Embri — App Studio</title>
 
   <style>
     :root{
       --bg0:#070B12;
       --bg1:#0B1220;
       --card:rgba(18, 26, 38, .68);
+      --card2:rgba(18, 26, 38, .52);
       --stroke:rgba(255,255,255,.10);
 
       --text:rgba(255,255,255,.92);
@@ -24,11 +25,11 @@
 
       --blue:#2AA8FF;
       --red:#D45656;
-      --red2:#B84747;
+      --purple:#9B59FF;
 
       --shadow:0 18px 40px rgba(0,0,0,.55);
       --radius:18px;
-      --max:1040px;
+      --max:1100px;
 
       --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
       --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
@@ -42,6 +43,7 @@
       line-height:1.55;
       background:
         radial-gradient(1200px 700px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
+        radial-gradient(900px 600px at 85% 0%, rgba(155,89,255,.12), transparent 60%),
         radial-gradient(900px 600px at 50% 115%, rgba(212,86,86,.12), transparent 60%),
         radial-gradient(900px 600px at 10% 40%, rgba(255,255,255,.06), transparent 55%),
         linear-gradient(180deg, var(--bg1), var(--bg0));
@@ -52,13 +54,13 @@
     a{ color:var(--blue); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
-    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 64px; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 72px; }
 
+    /* Top bar */
     .topbar{
       display:flex; align-items:center; justify-content:space-between;
       gap:14px; margin-bottom:22px;
     }
-
     .brand{ display:flex; align-items:center; gap:10px; min-width:0; }
     .mark{
       width:36px; height:36px; border-radius:12px;
@@ -68,78 +70,68 @@
       border:1px solid rgba(255,255,255,.14);
       box-shadow:0 14px 30px rgba(0,0,0,.35);
     }
-
     .brand-title{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .brand-title strong{ font-size:14px; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
     .brand-title span{ font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 
-    .pill{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px; border-radius:999px;
+    .nav{
+      display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end;
+      font-size:12px; color:var(--muted);
+    }
+    .nav a{
+      padding:8px 10px;
+      border-radius:999px;
       border:1px solid var(--stroke);
       background:rgba(255,255,255,.06);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
-      color:var(--muted);
-      font-size:12px;
-      white-space:nowrap;
+      text-decoration:none;
+      color:var(--text);
     }
-    .sep{ opacity:.6; }
+    .nav a:hover{ border-color: rgba(42,168,255,.28); }
 
+    /* Hero */
     .hero{
       border:1px solid var(--stroke);
       background:var(--card);
       border-radius:calc(var(--radius) + 6px);
       box-shadow:var(--shadow);
-      padding:30px 22px;
+      padding:34px 22px;
       overflow:hidden;
       position:relative;
       backdrop-filter:blur(18px);
       -webkit-backdrop-filter:blur(18px);
     }
-
     .hero::before{
       content:"";
       position:absolute;
       inset:-1px;
       background:
         radial-gradient(700px 320px at 10% 0%, rgba(42,168,255,.20), transparent 55%),
-        radial-gradient(520px 260px at 90% 10%, rgba(212,86,86,.14), transparent 60%),
-        radial-gradient(520px 260px at 50% 120%, rgba(255,255,255,.06), transparent 60%);
+        radial-gradient(520px 260px at 90% 10%, rgba(155,89,255,.14), transparent 60%),
+        radial-gradient(520px 260px at 50% 120%, rgba(212,86,86,.10), transparent 60%);
       pointer-events:none;
       opacity:.9;
     }
-
-    h1{
+    .hero h1{
       position:relative;
       margin:0 0 10px;
-      font-size:38px;
-      letter-spacing:-.8px;
-      line-height:1.08;
+      font-size:42px;
+      letter-spacing:-.9px;
+      line-height:1.05;
     }
-
-    .subhead{
+    .hero p{
       position:relative;
       margin:0 0 18px;
       color:var(--muted);
       font-size:15px;
-      max-width:70ch;
+      max-width:78ch;
     }
-
-    .cta-row{
+    .cta{
       position:relative;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;
     }
-
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:11px 14px;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px; padding:11px 14px;
       border-radius:14px;
       border:1px solid var(--stroke);
       background:rgba(255,255,255,.06);
@@ -149,14 +141,9 @@
       letter-spacing:.1px;
       transition:transform 120ms ease, border-color 120ms ease;
       user-select:none;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(42,168,255,.28);
       text-decoration:none;
     }
-
+    .btn:hover{ transform:translateY(-1px); border-color:rgba(42,168,255,.28); }
     .btn.primary{
       border-color:rgba(42,168,255,.35);
       background:linear-gradient(135deg, rgba(42,168,255,.95), rgba(155,89,255,.90));
@@ -164,10 +151,11 @@
       box-shadow:0 18px 40px rgba(42,168,255,.18);
     }
 
+    /* Sections */
     .section-title{
       margin:22px 0 10px;
-      font-size:14px;
-      letter-spacing:.2px;
+      font-size:13px;
+      letter-spacing:.22px;
       text-transform:uppercase;
       color:var(--muted);
     }
@@ -176,57 +164,100 @@
       display:grid;
       grid-template-columns: 1.2fr .8fr;
       gap:14px;
-      margin-top:14px;
       align-items:start;
     }
-    @media (max-width:900px){ .grid{ grid-template-columns:1fr; } }
+    @media (max-width:980px){ .grid{ grid-template-columns:1fr; } }
 
     .card{
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       background:var(--card);
+      box-shadow:0 10px 22px rgba(0,0,0,.22);
+      padding:18px;
       backdrop-filter:blur(16px);
       -webkit-backdrop-filter:blur(16px);
-      box-shadow:0 10px 22px rgba(0,0,0,.22);
-      padding:18px 18px;
     }
 
-    .card h2{
-      margin:0 0 8px;
-      font-size:16px;
-      letter-spacing:-.2px;
+    /* Apps */
+    .apps{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
     }
-    .card p{
-      margin:0 0 10px;
-      color:var(--muted);
-      font-size:14px;
-    }
+    @media (max-width:760px){ .apps{ grid-template-columns:1fr; } }
 
-    .app-row{
-      display:flex; align-items:center; justify-content:space-between; gap:12px;
-      padding:12px; border-radius:16px;
+    .app-card{
       border:1px solid var(--stroke);
-      background:rgba(255,255,255,.05);
+      border-radius:var(--radius);
+      background:var(--card2);
+      padding:16px;
+      position:relative;
+      overflow:hidden;
     }
-    .app-left{ display:flex; align-items:center; gap:12px; min-width:0; }
+    .app-card::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background: radial-gradient(600px 200px at 10% 0%, rgba(42,168,255,.12), transparent 60%);
+      pointer-events:none;
+      opacity:.8;
+    }
+    .app-top{
+      position:relative;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      align-items:flex-start;
+      margin-bottom:12px;
+    }
+    .chip{
+      font-family:var(--mono);
+      font-size:11px;
+      color:rgba(255,255,255,.72);
+      border:1px solid var(--stroke);
+      background:rgba(255,255,255,.06);
+      padding:6px 10px;
+      border-radius:999px;
+      white-space:nowrap;
+    }
+    .app-left{ position:relative; display:flex; gap:12px; min-width:0; }
     .app-icon{
-      width:44px; height:44px; border-radius:14px; object-fit:cover;
+      width:48px; height:48px; border-radius:16px; object-fit:cover;
       border:1px solid rgba(255,255,255,.14);
       box-shadow:0 14px 30px rgba(0,0,0,.35);
+      flex:0 0 auto;
     }
     .app-meta{ min-width:0; }
-    .app-meta strong{ display:block; font-size:14px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .app-meta span{ display:block; font-size:12px; color:var(--muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-    .app-actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
-
-    .mini{
-      padding:9px 12px;
-      border-radius:12px;
+    .app-meta strong{
+      display:block; font-size:15px; letter-spacing:-.2px;
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+    }
+    .app-meta span{
+      display:block; font-size:12px; color:var(--muted);
+      white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+      margin-top:2px;
+    }
+    .app-desc{
+      position:relative;
+      color:var(--muted);
       font-size:13px;
+      margin:0 0 12px;
+      max-width:70ch;
+    }
+    .app-actions{
+      position:relative;
+      display:flex; flex-wrap:wrap; gap:10px;
     }
 
+    /* Principles */
+    .bullets{
+      margin:0; padding-left:18px; color:var(--text);
+    }
+    .bullets li{ margin:8px 0; }
+    .muted{ color:var(--muted); }
+
     footer{
-      margin-top:22px;
+      margin-top:26px;
       padding:14px 4px 0;
       display:flex;
       justify-content:space-between;
@@ -234,6 +265,12 @@
       flex-wrap:wrap;
       color:var(--muted);
       font-size:12px;
+    }
+    .sep{ opacity:.6; }
+
+    @media (prefers-reduced-motion:no-preference){
+      .hero,.card,.app-card{ animation:floatIn 240ms ease-out both; }
+      @keyframes floatIn{ from{ transform:translateY(6px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
     }
   </style>
 </head>
@@ -245,62 +282,118 @@
         <div class="mark" aria-hidden="true"></div>
         <div class="brand-title">
           <strong>Embri</strong>
-          <span>Apps built with focus</span>
+          <span>Independent app studio</span>
         </div>
       </div>
-      <div class="pill">
-        <span>iOS</span><span class="sep">•</span><span>Productivity</span><span class="sep">•</span><span>No tracking</span>
+
+      <div class="nav">
+        <a href="#apps">Apps</a>
+        <a href="#about">About</a>
+        <a href="mailto:embriapp@gmail.com?subject=Embri%20Support">Contact</a>
       </div>
     </div>
 
     <section class="hero">
-      <h1>Embri builds focused,<br/>beautifully designed apps.</h1>
-      <p class="subhead">
-        We build minimalist tools that help people stay consistent. YOYO Log is our first release: a clean time tracker with iCloud sync and export-ready reports.
+      <h1>We build focused,<br/>beautifully designed apps.</h1>
+      <p>
+        Embri is an independent studio creating minimalist tools that help people stay consistent.
+        Our apps prioritize clarity, privacy, and speed — no ads, no nonsense.
       </p>
-      <div class="cta-row">
-        <a class="btn primary" href="apps/yoyolog/">View YOYO Log</a>
-        <a class="btn" href="mailto:embriapp@gmail.com?subject=Embri%20Support">Contact</a>
+
+      <div class="cta">
+        <a class="btn primary" href="apps/yoyolog/">Explore YOYO Log</a>
+        <a class="btn" href="mailto:embriapp@gmail.com?subject=Embri%20Support">Email Embri</a>
       </div>
     </section>
 
-    <div class="section-title">Apps</div>
+    <div class="section-title" id="apps">Apps</div>
 
-    <div class="grid">
-      <div class="card">
-        <h2>YOYO Log</h2>
-        <p>Minimal time tracking with iCloud sync and clean exports.</p>
-
-        <div class="app-row">
+    <div class="apps">
+      <!-- App 01 -->
+      <div class="app-card">
+        <div class="app-top">
           <div class="app-left">
             <img class="app-icon" src="YOYOLOG.png" alt="YOYO Log icon" />
             <div class="app-meta">
               <strong>YOYO Log</strong>
-              <span>Clock in • breaks • jobs • export</span>
+              <span>Time tracking • iCloud sync • Exports</span>
             </div>
           </div>
-          <div class="app-actions">
-            <a class="btn mini" href="apps/yoyolog/">Product Page</a>
-            <a class="btn mini" href="apps/yoyolog/support.html">Support</a>
-            <a class="btn mini" href="apps/yoyolog/privacy.html">Privacy</a>
-          </div>
+          <div class="chip">APP 01</div>
+        </div>
+
+        <p class="app-desc">
+          A clean time tracker built for consistency. Clock in/out, breaks, jobs, and export-ready reports —
+          synced privately through iCloud.
+        </p>
+
+        <div class="app-actions">
+          <a class="btn" href="apps/yoyolog/">Product</a>
+          <a class="btn" href="apps/yoyolog/support.html">Support</a>
+          <a class="btn" href="apps/yoyolog/privacy.html">Privacy</a>
         </div>
       </div>
 
+      <!-- Future App placeholder (doesn't look empty) -->
+      <div class="app-card">
+        <div class="app-top">
+          <div class="app-left">
+            <div class="app-icon" style="display:grid;place-items:center;background:rgba(255,255,255,.06);border:1px solid var(--stroke);box-shadow:none;">
+              <span style="font-family:var(--mono);font-size:14px;color:rgba(255,255,255,.55);">+</span>
+            </div>
+            <div class="app-meta">
+              <strong>Next app</strong>
+              <span>Coming soon</span>
+            </div>
+          </div>
+          <div class="chip">IN BUILD</div>
+        </div>
+
+        <p class="app-desc">
+          Embri is building more tools with the same principles: focus, speed, and privacy. This space becomes your next product page when you’re ready.
+        </p>
+
+        <div class="app-actions">
+          <a class="btn" href="mailto:embriapp@gmail.com?subject=Embri%20Product%20Idea">Suggest an idea</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title" id="about">About</div>
+
+    <div class="grid">
       <div class="card">
-        <h2>Company</h2>
-        <p><strong>Support email:</strong> <a href="mailto:embriapp@gmail.com">embriapp@gmail.com</a></p>
-        <p><strong>Publishing:</strong> Apple App Store (paid apps supported)</p>
-        <p><strong>Privacy:</strong> No tracking. No ads. Data stays in iCloud where applicable.</p>
+        <h2 style="margin:0 0 8px;font-size:16px;letter-spacing:-.2px;">What Embri ships</h2>
+        <p class="muted" style="margin:0 0 12px;">
+          Small, reliable apps that feel premium. We design for daily use — not “feature bloat.”
+        </p>
+        <ul class="bullets">
+          <li><strong>Focus-first UX</strong> — fewer steps, less friction</li>
+          <li><strong>Privacy by default</strong> — no ads, no tracking</li>
+          <li><strong>Fast + stable</strong> — built for real workflows</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;font-size:16px;letter-spacing:-.2px;">Contact</h2>
+        <p class="muted" style="margin:0 0 12px;">
+          Support and business inquiries:
+        </p>
+        <p style="margin:0 0 12px;">
+          <strong><a href="mailto:embriapp@gmail.com">embriapp@gmail.com</a></strong>
+        </p>
+        <p class="muted" style="margin:0;">
+          App Store policies require public support and privacy links — we keep them clear and up to date.
+        </p>
       </div>
     </div>
 
     <footer>
       <div>© <span id="y"></span> Embri</div>
       <div>
+        <a href="#apps">Apps</a> <span class="sep">·</span>
         <a href="apps/yoyolog/">YOYO Log</a> <span class="sep">·</span>
-        <a href="apps/yoyolog/support.html">Support</a> <span class="sep">·</span>
-        <a href="apps/yoyolog/privacy.html">Privacy</a>
+        <a href="mailto:embriapp@gmail.com?subject=Embri%20Support">Contact</a>
       </div>
     </footer>
   </div>
