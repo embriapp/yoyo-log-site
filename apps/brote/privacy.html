@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="light" />
   <meta name="description" content="Brote Privacy Policy — Clear, honest, and minimal." />
   <meta name="theme-color" content="#FFFFFF" />
 
@@ -14,23 +14,17 @@
 
   <style>
     :root{
-      --bg0:#F8F8F8;
-      --bg1:#FFFFFF;
+      --bg:#F8F8F8;
       --card:#FFFFFF;
       --stroke:#E5E5E5;
-
       --text:#1A1A1A;
       --muted:#666;
-
-      --cyan:#E85D2A;
-      --cyan2:#00A8CC;
-
-      --shadow:0 20px 50px rgba(0,0,0,.50);
-      --radius:16px;
+      --accent:#22C55E;
+      --shadow:0 2px 8px rgba(0,0,0,.08);
+      --radius:8px;
       --max:920px;
-
-      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --sans:-apple-system,BlinkMacSystemFont,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --mono:Menlo,Monaco,monospace;
     }
 
     *{ box-sizing:border-box; }
@@ -39,12 +33,12 @@
       font-family:var(--sans);
       color:var(--text);
       line-height:1.7;
-      background:#F8F8F8;
+      background:var(--bg);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
 
-    a{ color:var(--cyan); text-decoration:none; }
+    a{ color:var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{ max-width:var(--max); margin:0 auto; padding:32px 18px 56px; }
@@ -57,8 +51,8 @@
     .brand{ display:flex; align-items:center; gap:12px; min-width:0; }
     .appicon{
       width:40px; height:40px; border-radius:12px; object-fit:cover;
-      border:1px solid #FFF0E8;
-      box-shadow:0 10px 25px #FFE0D4;
+      border:1px solid var(--stroke);
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
     }
     .brand-title{ display:flex; flex-direction:column; gap:2px; }
     .brand-title strong{ font-size:15px; font-weight:600; }
@@ -69,14 +63,16 @@
       align-items:center;
       gap:6px;
       padding:8px 12px;
-      border-radius:10px;
+      border-radius:6px;
       border:1px solid var(--stroke);
-      background:#F0F0F0;
+      background:transparent;
       font-size:13px;
+      color:var(--accent);
+      margin-bottom:20px;
       transition:all 120ms ease;
     }
     .back-link:hover{
-      background:#E5E5E5;
+      background:#F0FDF4;
       text-decoration:none;
     }
 
@@ -99,7 +95,7 @@
       font-size:18px;
       font-weight:600;
       letter-spacing:-.2px;
-      color:var(--cyan);
+      color:var(--accent);
     }
 
     p{
@@ -129,10 +125,10 @@
     }
 
     .highlight{
-      background:#FFF0E8;
-      border-left:3px solid var(--cyan);
+      background:#F0FDF4;
+      border-left:3px solid var(--accent);
       padding:12px 16px;
-      border-radius:8px;
+      border-radius:6px;
       margin:16px 0;
       font-size:14px;
     }
@@ -160,7 +156,7 @@
   <div class="wrap">
     <div class="topbar">
       <div class="brand">
-        <div class="appicon" style="background:linear-gradient(135deg,#FFF0E8,rgba(155,89,255,.15));display:grid;place-items:center;font-size:20px;">📝</div>
+        <img class="appicon" src="BROTE.png" alt="Brote logo" />
         <div class="brand-title">
           <strong>Brote</strong>
           <span>Privacy Policy</span>
@@ -173,69 +169,64 @@
     <p class="updated">Last updated: <span id="y"></span></p>
 
     <div class="highlight">
-      <strong>In short:</strong> We don't track you. We don't sell your data. Your notes are yours.
+      <strong>In short:</strong> Brote does not have a server, does not collect your data, and does not share your data with anyone — including us. Everything you enter is stored on your device and, if you enable it, synced across your own devices through your personal iCloud account.
     </div>
 
-    <h2>What We Collect</h2>
-    <p>
-      Brote stores only what you create: your notes, posts, and the content you choose to save.
-      We also store your display name (if you provide one) for your exported documents.
-    </p>
-
-    <h2>How Your Data Is Stored</h2>
-    <p>
-      Your notes sync privately through <strong>iCloud CloudKit</strong>. This means:
-    </p>
+    <h2>What Information Brote Handles</h2>
+    <p>Brote stores the information you choose to enter, including:</p>
     <ul>
-      <li><strong>Encrypted end-to-end</strong> — Your notes are encrypted before leaving your device</li>
-      <li><strong>Under your control</strong> — Only you can access your data through your Apple ID</li>
-      <li><strong>No Embri access</strong> — We never see or store your notes on our servers</li>
-      <li><strong>Backed up automatically</strong> — iCloud keeps your data safe across your devices</li>
+      <li>Account names, balances, and types</li>
+      <li>Transactions, categories, and notes</li>
+      <li>Budgets, envelopes, and savings goals</li>
+      <li>Recurring bill information</li>
     </ul>
+    <p>This information is used solely to power the app's features (tracking, budgeting, reporting) on your own device.</p>
 
-    <h2>What We Don't Do</h2>
+    <h2>Where Your Data Is Stored</h2>
     <ul>
-      <li><strong>No tracking</strong> — We don't track your usage, behavior, or analytics</li>
-      <li><strong>No analytics</strong> — We don't collect data about how you use Brote</li>
-      <li><strong>No ads</strong> — We don't serve ads or allow third-party advertising</li>
-      <li><strong>No selling data</strong> — We don't sell, share, or distribute your information</li>
-      <li><strong>No profiling</strong> — We don't build profiles based on your content</li>
+      <li><strong>On your device</strong>, in a local database.</li>
+      <li><strong>In your personal iCloud account</strong>, if iCloud sync is available and signed in, using Apple's CloudKit service. This lets your data sync between your own devices (e.g., iPhone and iPad). Apple's handling of this data is governed by Apple's own privacy policy at apple.com/legal/privacy.</li>
     </ul>
+    <p>We (the developer of Brote) do not operate any server that receives, stores, or has access to your data. There is no backend that transmits your financial information anywhere.</p>
 
-    <h2>Authentication</h2>
+    <h2>Receipt Scanning and Screenshot Import</h2>
     <p>
-      Brote uses your Apple ID for authentication only. We don't store your Apple ID credentials.
-      Apple handles all authentication securely on their servers.
+      When you scan a receipt or import transactions from a screenshot, Brote uses Apple's on-device Vision framework to read text from the image. This processing happens entirely on your device — images and extracted text are never uploaded or sent anywhere.
     </p>
 
-    <h2>When You Export</h2>
+    <h2>Face ID / Passcode</h2>
     <p>
-      When you export your notes, Brote creates a file on your device. We don't receive,
-      store, or transmit this exported data.
+      If you enable app-lock, Brote uses Apple's LocalAuthentication framework to verify your identity via Face ID, Touch ID, or your device passcode. Brote never has access to your biometric data — this is handled entirely by Apple's Secure Enclave.
     </p>
 
-    <h2>Third-Party Services</h2>
+    <h2>Notifications</h2>
     <p>
-      Brote relies on:
+      Brote may send you local notifications (e.g., budget alerts, bill reminders, weekly/monthly spending summaries). These are generated and scheduled entirely on your device and do not involve any push notification server operated by us.
     </p>
-    <ul>
-      <li><strong>Apple iCloud</strong> — For secure cloud storage and sync</li>
-      <li><strong>Apple App Store</strong> — For distribution and payment (Brote is free)</li>
-    </ul>
+
+    <h2>Data Sharing</h2>
     <p>
-      Please review Apple's privacy policy for details on their data handling practices.
+      We do not sell, rent, or share your data with third parties, advertisers, or analytics providers. Brote contains no advertising or analytics SDKs.
+    </p>
+
+    <h2>Data Deletion</h2>
+    <p>
+      You can delete any account, transaction, budget, envelope, or goal at any time from within the app. Deleting the app removes all locally stored data; if iCloud sync was enabled, you can also delete synced data via Settings on your device (Settings > [Your Name] > iCloud > Manage Account Storage).
+    </p>
+
+    <h2>Children's Privacy</h2>
+    <p>
+      Brote is not directed at children under 13 and does not knowingly collect information from children.
     </p>
 
     <h2>Changes to This Policy</h2>
     <p>
-      If we make material changes to this privacy policy, we'll notify you within the app.
-      Continued use of Brote means you accept the updated terms.
+      If Brote's data practices change (for example, if we add bank account linking or any server-based feature in the future), this policy will be updated accordingly before that feature is released.
     </p>
 
     <h2>Contact Us</h2>
     <p>
-      Questions about your privacy or this policy?
-      Email us at <a href="mailto:embriapp@gmail.com?subject=Brote%20Privacy">embriapp@gmail.com</a>
+      If you have questions about this privacy policy, contact us at <a href="mailto:embriapp@gmail.com?subject=Brote%20Privacy">embriapp@gmail.com</a>
     </p>
 
     <div class="highlight">
