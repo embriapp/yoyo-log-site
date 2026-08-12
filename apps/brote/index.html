@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="Brote — beautiful digital blogging. Express yourself freely with simple, elegant note-taking and cloud sync." />
+  <meta name="theme-color" content="#0B1220" />
+
+  <link rel="icon" href="BROTE.png" type="image/png" />
+  <link rel="apple-touch-icon" href="BROTE.png" />
+
+  <title>Brote — Digital Blogging</title>
+
+  <style>
+    :root{
+      --bg0:#050812;
+      --bg1:#0B1220;
+      --card:rgba(18, 26, 38, .60);
+      --stroke:rgba(255,255,255,.08);
+
+      --text:rgba(255,255,255,.94);
+      --muted:rgba(255,255,255,.60);
+
+      --cyan:#00D9FF;
+      --purple:#9B59FF;
+      --cyan2:#00A8CC;
+
+      --shadow:0 20px 50px rgba(0,0,0,.50);
+      --radius:16px;
+      --max:920px;
+
+      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
+
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family:var(--sans);
+      color:var(--text);
+      line-height:1.6;
+      background:
+        radial-gradient(1200px 700px at 50% -10%, rgba(0,217,255,.16), transparent 55%),
+        radial-gradient(900px 600px at 50% 115%, rgba(155,89,255,.12), transparent 60%),
+        radial-gradient(900px 600px at 10% 40%, rgba(255,255,255,.04), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg0));
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    a{ color:var(--cyan); text-decoration:none; transition:color 120ms ease; }
+    a:hover{ color:#00E8FF; text-decoration:underline; }
+
+    .wrap{ max-width:var(--max); margin:0 auto; padding:32px 18px 56px; }
+
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; margin-bottom:28px; flex-wrap:wrap;
+    }
+
+    .brand{ display:flex; align-items:center; gap:12px; min-width:0; }
+    .appicon{
+      width:40px; height:40px; border-radius:12px; object-fit:cover;
+      border:1px solid rgba(0,217,255,.20);
+      box-shadow:0 10px 25px rgba(0,217,255,.15);
+    }
+    .brand-title{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+    .brand-title strong{ font-size:15px; font-weight:600; letter-spacing:-.2px; }
+    .brand-title span{ font-size:12px; color:var(--muted); }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 14px; border-radius:10px;
+      border:1px solid rgba(0,217,255,.20);
+      background:rgba(0,217,255,.08);
+      backdrop-filter:blur(12px);
+      -webkit-backdrop-filter:blur(12px);
+      color:#00D9FF;
+      font-size:12px;
+      font-weight:600;
+      white-space:nowrap;
+    }
+    .sep{ opacity:.5; }
+
+    .hero{
+      border:1px solid rgba(0,217,255,.20);
+      background:var(--card);
+      border-radius:calc(var(--radius) + 2px);
+      box-shadow:var(--shadow);
+      padding:36px 28px;
+      overflow:hidden;
+      position:relative;
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:-1px;
+      background:
+        radial-gradient(700px 320px at 10% 0%, rgba(0,217,255,.15), transparent 55%),
+        radial-gradient(520px 260px at 90% 10%, rgba(155,89,255,.10), transparent 60%),
+        radial-gradient(520px 260px at 50% 120%, rgba(255,255,255,.04), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .hero-inner{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:start;
+    }
+    @media (max-width:820px){ .hero-inner{ grid-template-columns:1fr; } }
+
+    h1{
+      margin:0 0 12px;
+      font-size:40px;
+      font-weight:700;
+      letter-spacing:-.8px;
+      line-height:1.1;
+      background:linear-gradient(135deg, #00D9FF, #00A8CC);
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .subhead{
+      margin:0 0 20px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.65;
+      max-width:65ch;
+    }
+
+    .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:11px 16px;
+      border-radius:12px;
+      border:1px solid rgba(0,217,255,.25);
+      background:rgba(0,217,255,.08);
+      color:var(--text);
+      font-size:14px;
+      font-weight:600;
+      letter-spacing:.1px;
+      transition:all 140ms ease;
+      user-select:none;
+    }
+    .btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(0,217,255,.40);
+      background:rgba(0,217,255,.12);
+      text-decoration:none;
+    }
+
+    .btn.primary{
+      border-color:rgba(0,217,255,.40);
+      background:linear-gradient(135deg, var(--cyan), var(--cyan2));
+      color:#fff;
+      box-shadow:0 12px 30px rgba(0,217,255,.25);
+    }
+    .btn.primary:hover{
+      transform:translateY(-2px) scale(1.01);
+      box-shadow:0 16px 40px rgba(0,217,255,.35);
+    }
+
+    .meta-card{
+      border:1px solid rgba(0,217,255,.15);
+      border-radius:var(--radius);
+      background:rgba(0,217,255,.06);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      padding:16px 16px 14px;
+    }
+    .meta-title{
+      font-size:11px;
+      color:var(--muted);
+      margin:0 0 12px;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      font-weight:700;
+    }
+    .meta-item{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding:11px 12px;
+      border-radius:10px;
+      border:1px solid rgba(0,217,255,.10);
+      background:rgba(0,217,255,.04);
+      margin-bottom:10px;
+    }
+    .meta-item:last-child{ margin-bottom:0; }
+    .meta-item span{ color:var(--muted); font-size:12px; font-weight:500; }
+    .meta-item strong{ font-size:13px; font-family:var(--mono); color:var(--cyan); }
+
+    .grid{
+      margin-top:20px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    @media (max-width:820px){ .grid{ grid-template-columns:1fr; } }
+
+    .card{
+      border:1px solid rgba(0,217,255,.15);
+      border-radius:var(--radius);
+      background:var(--card);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      box-shadow:0 10px 25px rgba(0,0,0,.25);
+      padding:20px 20px;
+      transition:all 200ms ease;
+    }
+    .card:hover{
+      border-color:rgba(0,217,255,.30);
+      background:rgba(18, 26, 38, .75);
+      transform:translateY(-4px);
+    }
+    .card h2{
+      margin:0 0 10px;
+      font-size:16px;
+      letter-spacing:-.2px;
+      color:#00D9FF;
+    }
+    .card p{
+      margin:0 0 12px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.6;
+    }
+
+    footer{
+      margin-top:28px;
+      padding:16px 4px 0;
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:12px;
+      border-top:1px solid rgba(0,217,255,.10);
+      padding-top:20px;
+    }
+
+    @media (prefers-reduced-motion:no-preference){
+      .hero, .card, .meta-card{ animation:floatIn 400ms ease-out both; }
+      @keyframes floatIn{ from{ transform:translateY(8px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="appicon" style="background:linear-gradient(135deg,rgba(0,217,255,.20),rgba(155,89,255,.15));display:grid;place-items:center;font-size:20px;">📝</div>
+        <div class="brand-title">
+          <strong>Brote</strong>
+          <span>Support & Privacy</span>
+          <span style="font-size:11px; color:rgba(255,255,255,.5); display:block; margin-top:3px;">
+  by <a href="/" style="color:#00D9FF; text-decoration:none;">Embri</a>
+</span>
+        </div>
+      </div>
+      <div class="pill">
+        <span>Public App Store</span><span class="sep">•</span><span>Cloud Sync</span><span class="sep">•</span><span>Free</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>Express freely.<br/>Write beautifully.</h1>
+          <p class="subhead">
+            Brote is your digital space for thoughts, ideas, and stories. Simple, elegant, and completely yours. Cloud sync keeps your words safe.
+          </p>
+
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:embriapp@gmail.com?subject=Brote%20Support">Support</a>
+            <a class="btn" href="privacy.html">Privacy Policy</a>
+            <a class="btn" href="mailto:embriapp@gmail.com?subject=Brote%20Support">Email</a>
+          </div>
+
+          <p style="margin-top:14px; font-size:12px; color:var(--muted);">
+            Support email: <a href="mailto:embriapp@gmail.com">embriapp@gmail.com</a>
+          </p>
+        </div>
+
+        <aside class="meta-card" aria-label="App summary">
+          <p class="meta-title">At a glance</p>
+          <div class="meta-item"><span>Data storage</span><strong>Cloud Sync</strong></div>
+          <div class="meta-item"><span>Tracking</span><strong>None</strong></div>
+          <div class="meta-item"><span>Accounts</span><strong>Apple ID only</strong></div>
+          <div class="meta-item"><span>Pricing</span><strong>Free</strong></div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Support</h2>
+        <p>Have a question? Need help? We're here to support your writing journey.</p>
+        <p><strong><a href="mailto:embriapp@gmail.com?subject=Brote%20Support">Get Support →</a></strong></p>
+      </section>
+
+      <section class="card">
+        <h2>Privacy Policy</h2>
+        <p>Your privacy matters. Learn how we protect your thoughts and data.</p>
+        <p><strong><a href="privacy.html">Read Privacy Policy →</a></strong></p>
+      </section>
+    </div>
+
+    <footer>
+      <div>© <span id="y"></span> Embri</div>
+      <div>
+        <a href="/">Embri</a> <span class="sep">·</span> <a href="privacy.html">Privacy</a> <span class="sep">·</span> <a href="mailto:embriapp@gmail.com?subject=Brote%20Support">Contact</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
