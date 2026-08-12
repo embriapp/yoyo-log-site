@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="dark light" />
   <meta name="description" content="YOYO Log — minimalist time tracking with iCloud sync and clean exports." />
-  <meta name="theme-color" content="#0B1220" />
+  <meta name="theme-color" content="#FFFFFF" />
 
   <link rel="icon" href="YOYOLOG.png" type="image/png" />
   <link rel="apple-touch-icon" href="YOYOLOG.png" />
@@ -16,12 +16,12 @@
   <style>
     :root{
       --bg0:#070B12;
-      --bg1:#0B1220;
+      --bg1:#FFFFFF;
       --card:rgba(18, 26, 38, .68);
-      --stroke:rgba(255,255,255,.10);
+      --stroke:#E5E5E5;
 
-      --text:rgba(255,255,255,.92);
-      --muted:rgba(255,255,255,.62);
+      --text:#1A1A1A;
+      --muted:#666;
 
       --blue:#2AA8FF;
       --red:#D45656;
@@ -41,11 +41,7 @@
       font-family:var(--sans);
       color:var(--text);
       line-height:1.55;
-      background:
-        radial-gradient(1200px 700px at 50% -10%, rgba(42,168,255,.18), transparent 55%),
-        radial-gradient(900px 600px at 50% 115%, rgba(212,86,86,.14), transparent 60%),
-        radial-gradient(900px 600px at 10% 40%, rgba(255,255,255,.06), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg0));
+      background:#F8F8F8;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
@@ -74,9 +70,9 @@
       display:inline-flex; align-items:center; gap:8px;
       padding:10px 12px; border-radius:999px;
       border:1px solid var(--stroke);
-      background:rgba(255,255,255,.06);
-      backdrop-filter:blur(10px);
-      -webkit-backdrop-filter:blur(10px);
+      background:#F0F0F0;
+      
+      -webkit-
       color:var(--muted);
       font-size:12px;
       white-space:nowrap;
@@ -91,8 +87,8 @@
       padding:28px 22px;
       overflow:hidden;
       position:relative;
-      backdrop-filter:blur(18px);
-      -webkit-backdrop-filter:blur(18px);
+      
+      -webkit-
     }
 
     .hero::before{
@@ -102,7 +98,7 @@
       background:
         radial-gradient(700px 320px at 10% 0%, rgba(42,168,255,.20), transparent 55%),
         radial-gradient(520px 260px at 90% 10%, rgba(212,86,86,.14), transparent 60%),
-        radial-gradient(520px 260px at 50% 120%, rgba(255,255,255,.06), transparent 60%);
+        radial-gradient(520px 260px at 50% 120%, #F0F0F0, transparent 60%);
       pointer-events:none;
       opacity:.9;
     }
@@ -139,7 +135,7 @@
       padding:11px 14px;
       border-radius:14px;
       border:1px solid var(--stroke);
-      background:rgba(255,255,255,.06);
+      background:#F0F0F0;
       color:var(--text);
       font-size:14px;
       font-weight:600;
@@ -164,9 +160,9 @@
     .meta-card{
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      background:rgba(255,255,255,.06);
-      backdrop-filter:blur(14px);
-      -webkit-backdrop-filter:blur(14px);
+      background:#F0F0F0;
+      
+      -webkit-
       padding:14px 14px 12px;
     }
     .meta-title{
@@ -183,7 +179,7 @@
       padding:10px 10px;
       border-radius:14px;
       border:1px solid var(--stroke);
-      background:rgba(255,255,255,.05);
+      background:#F0F0F0;
       margin-bottom:10px;
     }
     .meta-item:last-child{ margin-bottom:0; }
@@ -202,8 +198,8 @@
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       background:var(--card);
-      backdrop-filter:blur(16px);
-      -webkit-backdrop-filter:blur(16px);
+      
+      -webkit-
       box-shadow:0 10px 22px rgba(0,0,0,.22);
       padding:18px 18px;
     }
