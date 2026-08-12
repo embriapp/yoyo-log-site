@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark light" />
+  <meta name="color-scheme" content="light" />
   <meta name="description" content="YOYO Log — minimalist time tracking with iCloud sync and clean exports." />
   <meta name="theme-color" content="#FFFFFF" />
 
@@ -15,24 +15,17 @@
 
   <style>
     :root{
-      --bg0:#070B12;
-      --bg1:#FFFFFF;
-      --card:rgba(18, 26, 38, .68);
+      --bg:#F8F8F8;
+      --card:#FFFFFF;
       --stroke:#E5E5E5;
-
       --text:#1A1A1A;
       --muted:#666;
-
-      --blue:#2AA8FF;
-      --red:#D45656;
-      --red2:#B84747;
-
-      --shadow:0 18px 40px rgba(0,0,0,.55);
-      --radius:18px;
+      --accent:#E85D2A;
+      --shadow:0 2px 8px rgba(0,0,0,.08);
+      --radius:8px;
       --max:920px;
-
-      --mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
-      --sans:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --sans:-apple-system,BlinkMacSystemFont,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      --mono:Menlo,Monaco,monospace;
     }
 
     *{ box-sizing:border-box; }
@@ -41,12 +34,12 @@
       font-family:var(--sans);
       color:var(--text);
       line-height:1.55;
-      background:#F8F8F8;
+      background:var(--bg);
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
     }
 
-    a{ color:var(--blue); text-decoration:none; }
+    a{ color:var(--accent); text-decoration:none; }
     a:hover{ text-decoration:underline; }
 
     .wrap{ max-width:var(--max); margin:0 auto; padding:28px 18px 56px; }
@@ -59,8 +52,8 @@
     .brand{ display:flex; align-items:center; gap:10px; min-width:0; }
     .appicon{
       width:36px; height:36px; border-radius:12px; object-fit:cover;
-      border:1px solid rgba(255,255,255,.14);
-      box-shadow:0 14px 30px rgba(0,0,0,.35);
+      border:1px solid var(--stroke);
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
     }
     .brand-title{ display:flex; flex-direction:column; gap:2px; min-width:0; }
     .brand-title strong{ font-size:14px; letter-spacing:.2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
@@ -68,11 +61,9 @@
 
     .pill{
       display:inline-flex; align-items:center; gap:8px;
-      padding:10px 12px; border-radius:999px;
+      padding:10px 12px; border-radius:6px;
       border:1px solid var(--stroke);
-      background:#F0F0F0;
-      
-      -webkit-
+      background:transparent;
       color:var(--muted);
       font-size:12px;
       white-space:nowrap;
@@ -82,25 +73,11 @@
     .hero{
       border:1px solid var(--stroke);
       background:var(--card);
-      border-radius:calc(var(--radius) + 6px);
+      border-radius:var(--radius);
       box-shadow:var(--shadow);
       padding:28px 22px;
       overflow:hidden;
       position:relative;
-      
-      -webkit-
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:-1px;
-      background:
-        radial-gradient(700px 320px at 10% 0%, rgba(42,168,255,.20), transparent 55%),
-        radial-gradient(520px 260px at 90% 10%, rgba(212,86,86,.14), transparent 60%),
-        radial-gradient(520px 260px at 50% 120%, #F0F0F0, transparent 60%);
-      pointer-events:none;
-      opacity:.9;
     }
 
     .hero-inner{
@@ -133,36 +110,36 @@
       justify-content:center;
       gap:10px;
       padding:11px 14px;
-      border-radius:14px;
-      border:1px solid var(--stroke);
-      background:#F0F0F0;
+      border-radius:6px;
+      border:1px solid var(--muted);
+      background:transparent;
       color:var(--text);
       font-size:14px;
       font-weight:600;
-      letter-spacing:.1px;
-      transition:transform 120ms ease, border-color 120ms ease;
+      letter-spacing:0;
+      transition:all 120ms ease;
       user-select:none;
     }
     .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(42,168,255,.28);
+      border-color:var(--accent);
+      background:#FFF0E8;
       text-decoration:none;
     }
 
     .btn.primary{
-      border-color:rgba(212,86,86,.35);
-      background:linear-gradient(180deg, var(--red), var(--red2));
+      border-color:var(--accent);
+      background:var(--accent);
       color:#fff;
-      box-shadow:0 18px 40px rgba(212,86,86,.20);
     }
-    .btn.primary:hover{ transform:translateY(-1px) scale(1.01); }
+    .btn.primary:hover{ 
+      background:#D94D1A;
+      border-color:#D94D1A;
+    }
 
     .meta-card{
       border:1px solid var(--stroke);
       border-radius:var(--radius);
-      background:#F0F0F0;
-      
-      -webkit-
+      background:var(--card);
       padding:14px 14px 12px;
     }
     .meta-title{
@@ -177,9 +154,9 @@
       justify-content:space-between;
       gap:12px;
       padding:10px 10px;
-      border-radius:14px;
+      border-radius:6px;
       border:1px solid var(--stroke);
-      background:#F0F0F0;
+      background:transparent;
       margin-bottom:10px;
     }
     .meta-item:last-child{ margin-bottom:0; }
@@ -198,9 +175,7 @@
       border:1px solid var(--stroke);
       border-radius:var(--radius);
       background:var(--card);
-      
-      -webkit-
-      box-shadow:0 10px 22px rgba(0,0,0,.22);
+      box-shadow:var(--shadow);
       padding:18px 18px;
     }
     .card h2{
@@ -223,11 +198,7 @@
       flex-wrap:wrap;
       color:var(--muted);
       font-size:12px;
-    }
-
-    @media (prefers-reduced-motion:no-preference){
-      .hero, .card, .meta-card{ animation:floatIn 260ms ease-out both; }
-      @keyframes floatIn{ from{ transform:translateY(6px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+      border-top:1px solid var(--stroke);
     }
   </style>
 </head>
@@ -240,8 +211,8 @@
         <div class="brand-title">
           <strong>YOYO Log</strong>
           <span>Support & Privacy</span>
-          <span style="font-size:12px; color:rgba(255,255,255,.6); display:block; margin-top:2px;">
-  by <a href="/" style="color:#2AA8FF; text-decoration:none;">Embri</a>
+          <span style="font-size:12px; color:var(--muted); display:block; margin-top:2px;">
+  by <a href="/" style="color:var(--accent); text-decoration:none;">Embri</a>
 </span>
 
         </div>
@@ -284,7 +255,7 @@
     <div class="grid">
       <section class="card">
         <h2>Support</h2>
-        <p>Questions, bugs, exports, or syncing — we’ll help.</p>
+        <p>Questions, bugs, exports, or syncing — we'll help.</p>
         <p><strong><a href="support.html">Open Support Page →</a></strong></p>
       </section>
 
